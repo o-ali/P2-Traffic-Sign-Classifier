@@ -14126,7 +14126,6 @@ gg==
                                                                 <span class="n">test_size</span><span class="o">=</span><span class="mf">0.20</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="mi">42</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Old X_train size:&quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">X_train_normalized</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;New X_train size:&quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">X_train</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;X_validation size:&quot;</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">X_validation</span><span class="p">))</span>
 </pre></div>
 
@@ -15112,7 +15111,7 @@ Test Accuracy = 0.933
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[40]:</div>
+<div class="prompt input_prompt">In&nbsp;[45]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Load the images and plot them here.</span>
@@ -15830,7 +15829,7 @@ VDM+qEmSJElSzfxf8AOCv7XvJlgAAAAASUVORK5CYII=
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[41]:</div>
+<div class="prompt input_prompt">In&nbsp;[46]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="c1">### Run the predictions here and use the model to output the prediction for each image.</span>
@@ -15846,11 +15845,11 @@ VDM+qEmSJElSzfxf8AOCv7XvJlgAAAAASUVORK5CYII=
     <span class="n">my_accuracy</span> <span class="o">=</span> <span class="n">evaluate</span><span class="p">(</span><span class="n">my_images_normalized</span><span class="p">,</span> <span class="n">my_labels</span><span class="p">)</span>
     
     <span class="n">my_top_k</span> <span class="o">=</span> <span class="n">sess</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">top_k</span><span class="p">,</span> <span class="n">feed_dict</span><span class="o">=</span><span class="p">{</span><span class="n">x</span><span class="p">:</span> <span class="n">my_images_normalized</span><span class="p">,</span> <span class="n">dropout</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">})</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess for first image(30 km) expected:&quot;</span><span class="p">,</span> <span class="n">my_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot; prediction:&quot;</span><span class="p">,</span> <span class="n">my_top_k</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess for second image(wild animal) crossing expected:&quot;</span><span class="p">,</span> <span class="n">my_labels</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot; prediction:&quot;</span><span class="p">,</span> <span class="n">my_top_k</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess for third image(no entry) expected:&quot;</span><span class="p">,</span> <span class="n">my_labels</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot; prediction:&quot;</span><span class="p">,</span> <span class="n">my_top_k</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess for fourth image(work zone) expected:&quot;</span><span class="p">,</span> <span class="n">my_labels</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot; prediction:&quot;</span><span class="p">,</span> <span class="n">my_top_k</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess for fifth image(roundabout) expected:&quot;</span><span class="p">,</span> <span class="n">my_labels</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="s2">&quot; prediction:&quot;</span><span class="p">,</span> <span class="n">my_top_k</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess for first image expected:&quot;</span><span class="p">,</span> <span class="n">my_labels</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&quot; prediction:&quot;</span><span class="p">,</span> <span class="n">my_top_k</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess for second image crossing expected:&quot;</span><span class="p">,</span> <span class="n">my_labels</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="s2">&quot; prediction:&quot;</span><span class="p">,</span> <span class="n">my_top_k</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess for third image expected:&quot;</span><span class="p">,</span> <span class="n">my_labels</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&quot; prediction:&quot;</span><span class="p">,</span> <span class="n">my_top_k</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess for fourth image expected:&quot;</span><span class="p">,</span> <span class="n">my_labels</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="s2">&quot; prediction:&quot;</span><span class="p">,</span> <span class="n">my_top_k</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">3</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Guess for fifth image expected:&quot;</span><span class="p">,</span> <span class="n">my_labels</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="s2">&quot; prediction:&quot;</span><span class="p">,</span> <span class="n">my_top_k</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">4</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
     
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;My Set Accuracy = </span><span class="si">{:.3f}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">my_accuracy</span><span class="p">))</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">my_accuracy</span><span class="o">*</span><span class="mi">100</span><span class="p">,</span> <span class="s2">&quot;%&quot;</span><span class="p">)</span>
@@ -15871,11 +15870,11 @@ VDM+qEmSJElSzfxf8AOCv7XvJlgAAAAASUVORK5CYII=
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>INFO:tensorflow:Restoring parameters from ./lenet
-Guess for first image(30 km) expected: 3  prediction: 3
-Guess for second image(wild animal) crossing expected: 1  prediction: 1
-Guess for third image(no entry) expected: 12  prediction: 12
-Guess for fourth image(work zone) expected: 18  prediction: 18
-Guess for fifth image(roundabout) expected: 25  prediction: 25
+Guess for first image expected: 3  prediction: 3
+Guess for second image crossing expected: 1  prediction: 1
+Guess for third image expected: 12  prediction: 12
+Guess for fourth image expected: 18  prediction: 18
+Guess for fifth image expected: 25  prediction: 25
 My Set Accuracy = 1.000
 100.0 %
 </pre>
