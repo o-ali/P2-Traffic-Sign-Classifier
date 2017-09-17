@@ -453,6 +453,32 @@ with tf.Session() as sess:
 
 ---
 
+## Previous Attempts:
+Here are a couple different settings I used during testing before deciding on this final set. There were a lot more attempts with varying preprocessing techniques, augmentation, and the architecture. They produced results lower than .9 for the test accuracy and a low validation accuracy hovering around .93
+
+Minimum Images Per Class: 1000
+Epoch: 100
+Batch Size: 128
+Architecture: Basic LeNet
+Learning Rate: .0001
+Dropout: 0.7
+Training Accuracy: 0.992
+Validation Accuracy: 0.979
+Test Accuracy: 0.914
+
+Minimum Images Per Class: 850
+Epoch: 100
+Batch Size: 128
+Architecture: Basic LeNet
+Learning Rate: .0005
+Dropout: 0.5
+Training Accuracy: 0.999
+Validation Accuracy: 0.989
+Test Accuracy: 0.938
+While this had a little better results in the test set it did worse, at 80% for my custom images and validation was less. It also wasn't consistent during retraining.
+
+---
+
 ## Step 3: Test a Model on New Images
 
 To give yourself more insight into how your model is working, download at least five pictures of German traffic signs from the web and use your model to predict the traffic sign type.
@@ -514,7 +540,7 @@ with tf.Session() as sess:
     
     my_top_k = sess.run(top_k, feed_dict={x: my_images_normalized, dropout: 1.0})
     print("Guess for first image expected:", my_labels[0], " prediction:", my_top_k[1][0][0])
-    print("Guess for second image crossing expected:", my_labels[1], " prediction:", my_top_k[1][1][0])
+    print("Guess for second image expected:", my_labels[1], " prediction:", my_top_k[1][1][0])
     print("Guess for third image expected:", my_labels[2], " prediction:", my_top_k[1][2][0])
     print("Guess for fourth image expected:", my_labels[3], " prediction:", my_top_k[1][3][0])
     print("Guess for fifth image) expected:", my_labels[4], " prediction:", my_top_k[1][4][0])
@@ -525,7 +551,7 @@ with tf.Session() as sess:
 
     INFO:tensorflow:Restoring parameters from ./lenet
     Guess for first image expected: 3  prediction: 3
-    Guess for second image crossing expected: 1  prediction: 1
+    Guess for second image expected: 1  prediction: 1
     Guess for third image expected: 12  prediction: 12
     Guess for fourth image expected: 18  prediction: 18
     Guess for fifth image expected: 25  prediction: 25
