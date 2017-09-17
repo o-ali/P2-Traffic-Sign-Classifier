@@ -15094,6 +15094,60 @@ Test Accuracy = 0.933
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Previous-Attempts:">Previous Attempts:<a class="anchor-link" href="#Previous-Attempts:">&#182;</a></h3><p>Here are a couple different settings I used during testing before deciding on this final set.
+There were a lot more attempts with varying preprocessing techniques, augmentation, and the architecture. They produced results lower than .9 for the test accuracy and a low validation accuracy hovering around .93</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Minimum Images Per Class: 1000</p>
+<p>Epoch: 100</p>
+<p>Batch Size: 128</p>
+<p>Architecture: Basic LeNet</p>
+<p>Learning Rate: .0001</p>
+<p>Dropout: 0.7</p>
+<p>Training Accuracy: 0.992</p>
+<p>Validation Accuracy: 0.979</p>
+<p>Test Accuracy: 0.914</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<hr>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Minimum Images Per Class: 850</p>
+<p>Epoch: 100</p>
+<p>Batch Size: 128</p>
+<p>Architecture: Basic LeNet</p>
+<p>Learning Rate: .0005</p>
+<p>Dropout: 0.5</p>
+<p>Training Accuracy: 0.999</p>
+<p>Validation Accuracy: 0.989</p>
+<p>Test Accuracy: 0.938</p>
+<p>While this had a little better results in the test set it did worse, at 80% for my custom images and validation was less. It also wasn't consistent during retraining.</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <hr>
 <h2 id="Step-3:-Test-a-Model-on-New-Images">Step 3: Test a Model on New Images<a class="anchor-link" href="#Step-3:-Test-a-Model-on-New-Images">&#182;</a></h2><p>To give yourself more insight into how your model is working, download at least five pictures of German traffic signs from the web and use your model to predict the traffic sign type.</p>
 <p>You may find <code>signnames.csv</code> useful as it contains mappings from the class id (integer) to the actual sign name.</p>
