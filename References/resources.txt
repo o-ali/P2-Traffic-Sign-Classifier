@@ -1,0 +1,3 @@
+https://github.com/ckyrkou/Traffic_Sign_Classifier/blob/master/Traffic_Sign_Classifier.ipynb (display samples per class graph)
+https://github.com/lfiaschi/udacity-traffic-sign-classifier/blob/master/Traffic_Sign_Classifier.ipynb (random scaling of images)
+https://github.com/jeremy-shannon/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb (random brightness, create validation set from training set)
